@@ -67,16 +67,25 @@ end
 
 def main_menu
   loop do
-    p "Press 'a' to add list or 'l' to see current To-Do lists."
-    p "Press 's' to select list to add or remove tasks from."
-    p "Press 'x' to exit."
+    p "Enter 'a' to add list or 'l' to see current To-Do lists."
+    p "Enter 's' to select list to add or remove tasks from."
+    p "Enter 't' to add a task to the selected list."
+    p "Enter 'r' to remove a task from the selected list."
+    p "Enter 'd' to display the tasks on your selected list."
+    p "Enter 'x' to exit."
     main_choice = gets.chomp
     if main_choice == 'a'
       add_list
     elsif main_choice == 'l'
       list_lists
-    #elsif main_choice == 's'
-      #select_list
+    elsif main_choice == 's'
+      select_list
+    elsif main_choice == 't'
+      add_task
+    elsif main_choice == 'r'
+      remove_task
+    elsif main_choice == 'd'
+      show_tasks
     elsif main_choice == 'x'
       p "Good riddance"
       exit
